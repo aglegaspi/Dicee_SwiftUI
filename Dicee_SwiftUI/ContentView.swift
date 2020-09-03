@@ -14,12 +14,39 @@ struct ContentView: View {
         ZStack {
             Image("background")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
-
-            Text("Hello, World!")
             
+            VStack {
+                Image("diceeLogo")
+                HStack {
+                    DiceView(n: 1)
+                    DiceView(n: 2)
+                }
+                .padding(.horizontal)
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Roll")
+                        .font(.system(size: 50))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                }
+                .background(Color.red)
+            }
         }
+    }
+}
+
+struct DiceView: View {
+    let n: Int
+    
+    var body: some View {
+        Image("dice\(n)")
+            .resizable()
+            .aspectRatio(1, contentMode: .fit)
+        .padding()
     }
 }
 
@@ -28,3 +55,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
