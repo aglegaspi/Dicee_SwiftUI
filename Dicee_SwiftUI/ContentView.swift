@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var leftDiceNumber = 1
+    var rightDiceNumber = 1
+    
     var body: some View {
         
         ZStack {
@@ -22,8 +26,8 @@ struct ContentView: View {
                 Spacer()
                 
                 HStack {
-                    DiceView(n: 1)
-                    DiceView(n: 2)
+                    DiceView(n: leftDiceNumber)
+                    DiceView(n: rightDiceNumber)
                 }
                 .padding(.horizontal)
                 
